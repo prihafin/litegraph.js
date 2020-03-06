@@ -10,7 +10,7 @@
     "private": false,
     "scripts": {
         "prebuild": "rimraf build",
-        "build": "grunt build",
+        "build": "node build.js",
         "start": "nodemon utils/server.js",
         "test": "echo \"Error: no test specified\" && exit 1",
         "prettier": "npx prettier --write src/**/*.* css/**/*.*",

@@ -252,7 +252,7 @@
 			name: "",
 			type: "number",
 			value: 0
-		}; 
+		};
 
         var that = this;
 
@@ -347,9 +347,6 @@
 		{
 			v = v || "";
 			this.updateType(v);
-		}
-		else if( name == "value" )
-		{
 		}
 	}
 

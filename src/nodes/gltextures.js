@@ -1068,10 +1068,10 @@
 			precision: LGraphTexture.DEFAULT
 		};
 
-		this._uniforms = { 
-			u_texture: 0, 
-			u_textureB: 1, 
-			u_factor: 1, 
+		this._uniforms = {
+			u_texture: 0,
+			u_textureB: 1,
+			u_factor: 1,
 			u_scale: vec2.create(),
 			u_offset: vec2.create()
 		};
@@ -1580,7 +1580,7 @@
 		this.addOutput("avg", "vec4");
 		this.addOutput("lum", "number");
 		this.properties = {
-			use_previous_frame: true, //to avoid stalls 
+			use_previous_frame: true, //to avoid stalls
 			high_quality: false //to use as much pixels as possible
 		};
 
@@ -1693,12 +1693,12 @@
 				v.set(pixel);
 				if (type == gl.UNSIGNED_BYTE) {
 					vec4.scale(v, v, 1 / 255);
-				} else if (
+				} /*else if (
 					type == GL.HALF_FLOAT ||
 					type == GL.HALF_FLOAT_OES
 				) {
 					//no half floats possible, hard to read back unless copyed to a FLOAT texture, so temp_texture is always forced to FLOAT
-				}
+				}*/
 			}
 		}
 	};
@@ -1738,7 +1738,7 @@
 		this.addOutput("max", "vec4");
 		this.properties = {
 			mode: "max",
-			use_previous_frame: true //to avoid stalls 
+			use_previous_frame: true //to avoid stalls
 		};
 
 		this._uniforms = {
@@ -1818,7 +1818,7 @@
 		{
 			var tex = this._textures_chain[i];
 
-			prev = tex;				
+			prev = tex;
 		}
 
 		var shader = LGraphTextureMinMax._shader;
@@ -4919,7 +4919,7 @@ void main(void){\n\
 		if (name == "code" )
 			this.compileCode( value );
 	}
-	
+
 	LGraphTextureCanvas2D.prototype.compileCode = function( code ) {
 		this._func = null;
 		if( !LiteGraph.allow_scripts )
